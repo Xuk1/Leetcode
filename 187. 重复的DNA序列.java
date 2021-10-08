@@ -21,4 +21,5 @@ class Solution {
 
 使用哈希表存储不重复子串的出现次数
 可以使用substring函数快速获得连续的子串
+getOrDefault函数可以快速判定选用哪个值
 */
