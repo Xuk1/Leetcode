@@ -10,21 +10,18 @@ class Solution {
         map.put(']', '[');
         map.put('}', '{');
         Deque<Character> stack = new LinkedList<>();        //用栈存储左括号
-        for(int i=0; i<n; i++){             
-            char c = s.charAt(i);                           //
-            if(map.containsKey(c)){
-                if(stack.isEmpty() || stack.peek() != map.get(c)){
+        for(int i=0; i<n; i++){
+            char c = s.charAt(i);
+            if(map.containsKey(c)){                         //如果map的key中有这个字符，就说明它是右括号
+                if(stack.isEmpty() || stack.peek() != map.get(c)){      //当栈为空或者栈顶的左括号和右括号不匹配的时候，就可以说明这个不是有效的括号
                     return false;
                 }
-                stack.pop();
+                stack.pop();                                //如果此次匹配上了，就弹出栈顶的左括号，表示已经完成了匹配
             }else{
-                stack.push(c);
+                stack.push(c);                              //如果map的key中没有这个字符，就说明它是左括号
             }
         }
-        if(stack.isEmpty()){
-            return true;
-        }
-        return false;
+        return stack.isEmpty();
     }
 }
 
