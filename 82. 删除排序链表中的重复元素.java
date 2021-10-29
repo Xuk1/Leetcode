@@ -11,13 +11,6 @@
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
         ListNode prev = new ListNode(0, head);          //前驱结点
-        int n = 0;                                      //链表的长度
-        ListNode tmp = head;
-        while(tmp != null){
-            n++;
-            tmp = tmp.next;
-        }
-
         Map<Integer, Integer> map = new HashMap<>();    //存储链表中数字出现的次数
         Map<Integer, Integer> del = new HashMap<>();    //存储链表中要删除的数字
         ListNode temp = head;
