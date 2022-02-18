@@ -1,3 +1,22 @@
+_________________________Optimized Solution_______________________________
+class Solution {
+    public int findCenter(int[][] edges) {
+        int a = edges[0][0], b = edges[0][1];
+        if(a == edges[1][0] || a == edges[1][1]){
+            return a;
+        }
+        return b;
+    }
+}
+
+/*
+执行用时: 0ms ,在所有Java提交中击败了100.00%的用户
+内存消耗:64MB ，在所有Java提交中击败了 26.07%的用户
+*/
+
+
+
+___________________________First Solution__________________________________
 class Solution {
     public int findCenter(int[][] edges) {
         Map<Integer, Integer> map = new HashMap<>();
